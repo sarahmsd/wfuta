@@ -1,0 +1,16 @@
+.sidebar{
+	display: grid;
+	align-content: start;
+	justify-content: start;
+	gap: 1rem;
+}
+
+
+@media screen and (max-width: 950px){
+	.sidebar{
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 60rem;
+		justify-content: start;
+	}
+}

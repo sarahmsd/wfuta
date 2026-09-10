@@ -1,0 +1,42 @@
+.post{
+	display: grid;
+	gap: 1.5rem;
+	padding: 1rem 2rem;
+	max-width: 60rem;
+	justify-content: center;
+	margin: auto;
+	font-family:"Raleway", sans-serif;
+	font-size: 1.1rem;
+	color:#222;
+}
+
+.post_top{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	width: auto;
+	margin: auto;
+	justify-content: start;
+}
+
+.tag{
+	font-size: 1rem;
+	font-family: var(--title-font-style);
+}
+
+
+.post_image{
+	margin: auto;
+	display: flex;
+}
+
+.post_image img{
+	width: 45rem;
+	height: 45rem;
+	margin: auto;
+}
+
+.post_body{
+	width: auto;
+	margin: auto;
+}

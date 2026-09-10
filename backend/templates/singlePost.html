@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<main class="main">
+		<!-- Spotlight -->
+		<div class="bloc">
+			<div class="heading">
+			  <h1>{{article.titre}}
+			  	<span>{{article.excert}}</span>
+			  </h1>
+			</div>
+			<div class="post">
+				<div class="post_top">
+					<span class="tag">{{article.dateCreation}}</span>
+					<span class="tag">Zawiya</span>
+					<span class="tag">Ziara</span>
+				</div>
+				<div class="post_image">
+					{% for media in medias %}
+						{% if media.role == "cover" %}
+						<img src="{{media.url}}">
+						{% endif %}
+					{% endfor %}
+				</div>
+				<div class="post_body">
+					<p>{{article.content}}</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Blog -->
+		<div class="bloc">
+			<div class="heading">
+			  	<h1><span>Articles similaires</span></h1>
+			</div>
+			<div class="cards_bloc">
+				{% for latest in latests %}
+				<div class="card card_style_blog">
+					<div class="card_top">
+						<img class="card_image" src="{{latest.cover}}">
+						<a class="card_title">{{latest.titre}}</a>
+					</div>					
+					<div class="card_body">
+						<p class="card_text">{{latest.excert}}</p>
+					</div>
+					<div class="card_footer">
+						<a class="btn green fill" href="/singlePost/{{latest.id}}">Lire</a>						
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

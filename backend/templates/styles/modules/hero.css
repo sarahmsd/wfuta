@@ -1,0 +1,33 @@
+.hero{
+	display: grid;
+	gap: 1rem;
+	align-content: center;
+	padding: 2rem;
+
+	background: var(--maroon);
+	height: 20rem;
+}
+
+.hero.hero_style_2{
+	height: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem 0;
+}
+
+.hero_title{
+	color: var(--green);
+	font-size: 4rem;
+	font-style: var(--title-font-style);
+	font-family: var(--title-font-style);
+	margin: auto;
+	text-transform: uppercase;
+}
+
+.hero_text{
+	color: var(--black);
+	margin: auto;
+}

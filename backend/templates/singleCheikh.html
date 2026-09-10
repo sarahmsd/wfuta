@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+	
+{% block content %}
+
+	<main class="main">
+		<!-- Hero -->
+		<div class="hero hero_style_2">
+			<div class="card card_style_2">
+				<div class="card_top">
+					{% for media in medias %}
+						{% if media.role == "portrait" %}
+						<img
+							class="card_image"
+							src="{{ media.url }}"
+							alt="Portrait de {{ cheikh.nom }} {{ cheikh.prenom }}"
+						>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="card">
+				<div class="card_top">
+					<h2 class="card_title">Cheikh {{cheikh.nom}} {{cheikh.prenom}} {{cheikh.foyer}}</h2>
+				</div>					
+				<div class="card_body">
+					<p class="card_text">{{cheikh.bio}}</p>
+				</div>
+				<div class="card_footer">
+					<a class="btn green fill">En savoir plus</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="bloc">
+			<div class="heading">
+			  <h1>Waadjou
+			  	<span>Waadjou Cheikh</span>
+			  </h1>
+			</div>
+			<div class="cards_bloc">
+				
+				{% for media in medias %}
+    			{% if media.type == "audio" %}
+				<div class="card">
+					<div class="card_top">
+						<audio controls>
+							<source
+								src="{{ media.url }}"
+								type="{{ media.mime_type }}"
+							>
+						</audio>
+						<a class="card_title">{{media.nom}}</a>
+					</div>					
+					<div class="card_body">
+						<p class="card_text"></p>
+					</div>
+					<div class="card_footer">
+						<span class="card_footer-item"></span>
+						<span class="card_footer-item"></span>
+						<span class="card_footer-item"></span>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+
+				{% for media in medias %}
+    			{% if media.type == "video" %}
+				<div class="card">
+					<div class="card_top">
+						<video class="card_video" controls>
+							<source 
+								class="" 
+								src="{{ media.url }}"
+								type="{{ media.mime_type }}">
+						</video>
+						<a class="card_title">{{media.nom}}</a>
+					</div>					
+					<div class="card_body">
+						<p class="card_text"></p>
+					</div>
+					<div class="card_footer">
+						<span class="card_footer-item"></span>
+						<span class="card_footer-item"></span>
+						<span class="card_footer-item"></span>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<main class="main">
+		<!-- Hero -->
+		<div class="hero hero_style_2">
+			<div class="card card_style_2">
+				<div class="card_top">
+					<img class="card_image" src="assets/icons/icon_y.svg">
+				</div>
+			</div>
+			<div class="card">
+				<div class="card_top">
+					<h2 class="card_title">Devenez membre</h2>
+				</div>					
+				<div class="card_body">
+					<p class="card_text">Lorem ipsum dolor sit amet</p>
+				</div>
+				<div class="card_footer">
+					<a class="btn green fill" href="#">Je m'inscris</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Blog -->
+		<div class="bloc">
+			<div class="heading">
+			  <h1>Le Blog
+			  	<span>Reflexions et autres sources d'infos</span>
+			  </h1>
+			</div>
+			<div class="cards_bloc">
+				{% for article in articles %}
+				<div class="card card_style_blog">
+					<div class="card_top">
+						<img class="card_image" src="{{ article.cover }}">
+						<a class="card_title" href="/singlePost/{{article.id}}">{{article.titre}}</a>
+					</div>					
+					<div class="card_body">
+						<p class="card_text">{{article.excert}}</p>
+					</div>
+					<div class="card_footer">
+						<a class="btn green fill" href="/singlePost/{{article.id}}">Lire</a>						
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	<main class="main">
+		<!-- Hero -->
+		<div class="hero">
+			<h1 class="hero_title">Waliyabee Futa</h1>
+			<p class="hero_text">Ko Sadhi Ko Tooli Ka bhoundhou Needi e Ghandal</p>
+		</div>
+
+		<!-- Cheikhs -->
+		<div class="bloc">
+			<div class="heading">
+			  <h1>Cheikhs
+			  	<span>Nos bien aimés chouyoukh</span>
+			  </h1>
+			</div>
+			<div class="cards_bloc">
+				{% for cheikh in cheikhs %}
+				<div class="card">
+					<div class="card_top">
+						<img class="card_image" src="{{cheikh.portrait}}">
+						<a class="card_title" href="cheikhs/{{cheikh.id}}">{{cheikh.nom}} {{cheikh.prenom}}</a>
+					</div>					
+					<div class="card_body">
+						<p class="card_text">{{cheikh.bio | truncate(150, True, '...')}}</p>
+					</div>
+					<div class="card_footer">
+						<span class="card_footer-item">{{cheikh.foyer}}</span>
+						<span class="card_footer-item">{{cheikh.foyer}}</span>
+						<span class="card_footer-item">{{cheikh.foyer}}</span>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

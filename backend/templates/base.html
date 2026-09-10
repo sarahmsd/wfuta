@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ active_page}}</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('styles', path='main.css') }}">
+</head>
+<body>
+	<header class="appbar">
+		<div class="appbar_logo">
+			<!-- img src="" class="logo" -->
+			<h1>Waliyabee Fouta</h1>
+		</div>
+		<div class="appbar_menu">
+			<div class="appbar_menu_list">
+				<a class="appbar_menu_list-item {% if active_page == 'home' %}active{% endif %}" href="/">Accueil</a>
+				<a class="appbar_menu_list-item {% if active_page == 'cheikhs' %}active{% endif %}" href="/cheikhs">Cheikhs</a>
+				<a class="appbar_menu_list-item {% if active_page == 'stories' %}active{% endif %}" href="/stories">Histoires</a>
+				<a class="appbar_menu_list-item {% if active_page == 'actu' %}active{% endif %}" href="/actu">Actualités</a>
+				<a class="appbar_menu_list-item {% if active_page == 'blog' %}active{% endif %}" href="/blog">Blog</a>
+			</div>
+		</div>
+		<div class="appbar_buttons">
+			<a class="btn white">Connexion</a>
+			<a class="btn white">Contactez-nous</a>
+		</div>
+	</header>
+    {% block content %}{% endblock content %}
+    	<!-- Footer -->
+	<footer class="footer">
+		<div class="footer_logo">
+			<h1>Waliabee Fouta</h1>
+			<div class="footer_copy">
+			copyright2026
+		</div>
+		</div>
+		<div class="footer_menu">
+			<h2 class="footer_menu-title">Liens Utiles</h2>
+			<a class="footer_menu-item" href="">Link1 lorem ispsum dolor</a>
+			<a class="footer_menu-item" href="">Lorem ispsum dolor Link2</a>
+			<a class="footer_menu-item" href="">Link3 lorem ispsum dolor</a>
+			<a class="footer_menu-item" href="">lorem ispsum dolor Link4</a>
+		</div>		
+		<div class="footer_rs">
+			<a class="icon_rs"></a>
+			<a class="icon_rs"></a>
+			<div class="footer_buttons">
+				<a class="btn green fill">Connexion</a>
+				<a class="btn green">Contactez-nous</a>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

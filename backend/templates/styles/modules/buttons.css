@@ -1,0 +1,22 @@
+.btn{
+	border: 0.1rem solid var(--black);
+	padding: 0.5rem 1rem;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.btn.white{
+	border: 0.1rem solid var(--white);
+	color: var(--white);
+}
+
+.btn.green{
+	border: 0.1rem solid var(--green);
+	color: var(--green);
+}
+
+.btn.green.fill{
+	background: var(--green);
+	color: var(--white);
+}
