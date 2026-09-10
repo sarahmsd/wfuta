@@ -221,7 +221,5 @@ __marimo__/
 
 
 # Uploaded media
-backend/storage/media/videos/
-backend/storage/media/audios/
 *.mp4
 *.mp3
